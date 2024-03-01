@@ -7,7 +7,10 @@ import os
 class GloveGL:
 
     def __init__(self):
-        print(os.listdir("./recordings"))
+        # create recordings directory if not there already:
+        recDirectory = "./recordings/"
+        os.makedirs(os.path.dirname(recDirectory), exist_ok=True)
+        print(os.listdir(recDirectory))
         settings.init()
         self.mainScene = Scene()
         self.gui = GUI()
